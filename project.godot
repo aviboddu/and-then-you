@@ -11,9 +11,20 @@ config_version=5
 [application]
 
 config/name="AndThenYou"
+run/main_scene="uid://cgqnhusn445g0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+
+[gui]
+
+theme/custom="uid://ccvys01h03hb4"
 
 [input]
 

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cgqnhusn445g0"]
+
+[ext_resource type="PackedScene" uid="uid://sc5kjwg5ac4r" path="res://scenes/image_display/image_display.tscn" id="1_u1xfj"]
+
+[node name="Main" type="Control" unique_id=1591085550]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ImageDisplayContainer" type="AspectRatioContainer" parent="." unique_id=1379758587]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ImageDisplay" parent="ImageDisplayContainer" unique_id=876020404 instance=ExtResource("1_u1xfj")]

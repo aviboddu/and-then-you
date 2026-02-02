@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://sc5kjwg5ac4r"]
+
+[ext_resource type="Script" uid="uid://bk0qyjhtt1srf" path="res://scenes/image_display/camera.gd" id="1_4v3ch"]
+[ext_resource type="Script" uid="uid://bu322gsda6kn5" path="res://scenes/image_display/capture_theme.gd" id="1_ljdyh"]
+[ext_resource type="Texture2D" uid="uid://gkt4i5taricv" path="res://resources/images/sample_foreground.png" id="2_wyjyx"]
+[ext_resource type="Texture2D" uid="uid://sw4b7ra4dc2t" path="res://resources/images/sample_background.png" id="3_ljdyh"]
+[ext_resource type="Shader" uid="uid://bpo7uo8d721a1" path="res://scenes/image_display/texture_color.gdshader" id="4_cafh0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cafh0"]
+shader = ExtResource("4_cafh0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4ptb"]
+shader = ExtResource("4_cafh0")
+
+[node name="ImageDisplay" type="Node2D" unique_id=876020404 node_paths=PackedStringArray("foreground", "background")]
+script = ExtResource("1_ljdyh")
+foreground = NodePath("Foreground/ForegroundParallax/Foreground")
+background = NodePath("Background/BackgroundParallax/Background")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1461816624]
+offset = Vector2(960, 540)
+position_smoothing_enabled = true
+script = ExtResource("1_4v3ch")
+
+[node name="Foreground" type="CanvasLayer" parent="." unique_id=161112549]
+layer = -1
+offset = Vector2(960, 540)
+transform = Transform2D(1, 0, 0, 1, 960, 540)
+follow_viewport_enabled = true
+
+[node name="ForegroundParallax" type="Parallax2D" parent="Foreground" unique_id=125302397]
+z_index = 1
+scroll_scale = Vector2(0.02, 0.02)
+
+[node name="Foreground" type="Sprite2D" parent="Foreground/ForegroundParallax" unique_id=1946790469]
+material = SubResource("ShaderMaterial_cafh0")
+texture = ExtResource("2_wyjyx")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=724586024]
+layer = -2
+offset = Vector2(960, 540)
+transform = Transform2D(1, 0, 0, 1, 960, 540)
+follow_viewport_enabled = true
+
+[node name="BackgroundParallax" type="Parallax2D" parent="Background" unique_id=982093260]
+scroll_scale = Vector2(0.01, 0.01)
+
+[node name="Background" type="Sprite2D" parent="Background/BackgroundParallax" unique_id=31499521]
+material = SubResource("ShaderMaterial_n4ptb")
+texture = ExtResource("3_ljdyh")

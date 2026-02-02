@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://ccvys01h03hb4"]
+
+[sub_resource type="SystemFont" id="SystemFont_nkonk"]
+
+[resource]
+default_base_scale = 1.0
+default_font = SubResource("SystemFont_nkonk")
+default_font_size = 16
+Image/colors/Accent = Color(0.27387273, 0.27387273, 0.27387273, 1)
+Image/colors/Background = Color(0.8992584, 0.8992584, 0.8992584, 1)
+Image/colors/Clear = Color(0, 0, 0, 1)
