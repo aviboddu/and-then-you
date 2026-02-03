@@ -11,7 +11,7 @@ const clear_color_name: StringName = "Clear"
 const theme_name: StringName = "Image"
 const shader_parameter_name: StringName = "color"
 
-var current_theme: Theme = load(ProjectSettings.get("gui/theme/custom")):
+var current_theme: Theme = ResourceLibrary.get_theme("default"):
 	set(value):
 		apply_theme(value)
 
@@ -20,9 +20,6 @@ func _ready() -> void:
 	apply_theme(current_theme)
 
 func apply_theme(value: Theme) -> void:
-	print(value.get_color(foreground_color_name, theme_name))
-	print(value.get_color(background_color_name, theme_name))
-	print(value.get_color(clear_color_name, theme_name))
 	foreground.set_instance_shader_parameter(shader_parameter_name, value.get_color(foreground_color_name, theme_name))
 	background.set_instance_shader_parameter(shader_parameter_name, value.get_color(background_color_name, theme_name))
 	RenderingServer.set_default_clear_color(value.get_color(clear_color_name, theme_name))

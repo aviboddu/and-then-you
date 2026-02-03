@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="AndThenYou"
-run/main_scene="uid://cgqnhusn445g0"
+run/main_scene="uid://cdsj6xtqm3k7i"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
+
+[autoload]
+
+ResourceLibrary="*uid://cg4b40knxrvd6"
 
 [display]
 

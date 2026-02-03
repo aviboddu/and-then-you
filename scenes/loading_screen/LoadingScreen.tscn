@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cdsj6xtqm3k7i"]
+
+[ext_resource type="Script" uid="uid://dvbnpxrqyappt" path="res://scenes/loading_screen/loading_screen.gd" id="1_y17bw"]
+
+[node name="LoadingScreen" type="Control" unique_id=442245806 node_paths=PackedStringArray("progress_bar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y17bw")
+progress_bar = NodePath("MarginContainer/ProgressBar")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=806194161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer" unique_id=1621836548]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
